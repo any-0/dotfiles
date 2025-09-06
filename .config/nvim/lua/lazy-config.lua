@@ -9,7 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
-        "--  filter=blob:none",
+        "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
         lazypath,
     })
@@ -32,14 +32,22 @@ require("lazy").setup({
     --  │     theme     │
     --  └───────────────┘
 
+    --{
+    --    "sainnhe/gruvbox-material",
+    --    lazy = false,
+    --    priority = 1000,
+    --    config = function()
+    --        vim.g.gruvbox_material_background = "light"
+    --        vim.g.gruvbox_material_transparent_background = 1
+    --        vim.cmd.colorscheme("gruvbox-material")
+    --    end,
+    --},
     {
-        "sainnhe/gruvbox-material",
+        "EdenEast/nightfox.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            vim.g.gruvbox_material_background            = "light"
-            vim.g.gruvbox_material_transparent_background = 1
-            vim.cmd.colorscheme("gruvbox-material")
+            vim.cmd.colorscheme("carbonfox")
         end,
     },
 
@@ -47,19 +55,19 @@ require("lazy").setup({
     --  │     transparency     │
     --  └──────────────────────┘
 
-    {
-        "xiyaowong/transparent.nvim",
-        lazy = false,
-        opts = {
-            extra_groups  = {
-                "NvimTreeNormal", "NvimTreeWinSeparator",
-                "LualineNormal", "LualineInsert", "LualineVisual",
-                "LualineReplace", "LualineCommand", "LualineTerminal",
-                "StatusLine", "StatusLineNC" 
-            },
-            exclude_groups = { "CursorLine" },
-        },
-    },
+  --{
+  --    "xiyaowong/transparent.nvim",
+  --    lazy = false,
+  --    opts = {
+  --        extra_groups  = {
+  --            "NvimTreeNormal", "NvimTreeWinSeparator",
+  --            "LualineNormal", "LualineInsert", "LualineVisual",
+  --            "LualineReplace", "LualineCommand", "LualineTerminal",
+  --            "StatusLine", "StatusLineNC" 
+  --        },
+  --        exclude_groups = { "CursorLine" },
+  --    },
+  --},
 })
 
 --  ┌─────────────────────┐
@@ -77,8 +85,8 @@ vim.opt.undodir = undo_root .. '//'
 --  │   transparent statusline   │
 --  └────────────────────────────┘
 
-vim.api.nvim_set_hl(0, "StatusLine",   { bg = "none", fg = nil })
-vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none", fg = nil })
+--vim.api.nvim_set_hl(0, "StatusLine",   { bg = "none", fg = nil })
+--vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none", fg = nil })
 
 --  ┌─────────────┐
 --  │   plugins   │
