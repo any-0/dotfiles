@@ -1,7 +1,4 @@
-vim.keymap.set({ "n", "v", "x", "o" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", "v", "o", "i" }, "<F1>", "<Nop>", { noremap = true, silent = true, desc = "Unbind F1" })
-vim.g.mapleader = " "
-
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true, desc = "Exit terminal mode" })
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, { noremap = true, silent = true })
 vim.keymap.set("n", "U", "<C-r>", { noremap = true, silent = true, desc = "Redo" })

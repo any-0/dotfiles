@@ -9,11 +9,5 @@ vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
 vim.opt.fillchars:append { eob = " " }
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "json", "jsonc" },
-  callback = function()
-    vim.bo.expandtab = false
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop    = 2
-  end,
-})
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20"
+vim.opt.swapfile = false

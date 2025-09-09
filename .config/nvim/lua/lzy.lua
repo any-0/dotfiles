@@ -39,6 +39,9 @@ require("lazy").setup({
         })
       end
     }
+}, 
+{
+    lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
 })
 
 -- persistent undo
