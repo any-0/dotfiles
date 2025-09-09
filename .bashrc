@@ -20,8 +20,8 @@ if [ -f /usr/share/git/completion/git-prompt.sh ]; then
 fi
 
 
-#PROMPT_COMMAND='PS1="$"'
-PROMPT_COMMAND='PS1="\[\e[0;94m\]▶ [\[\e[0;97m\]\$(basename \$(dirname \"\$PWD\"))/\$(basename \"\$PWD\")\[\e[0;94m\]]\[\e[0;32m\]\$(__git_ps1 \" (%s)\")\[\e[0;94m\] \$ \[\e[0m\]"'
+PROMPT_COMMAND='PS1="\[\e[0;94m\]▶ [\[\e[0;97m\]\$(basename \$(dirname \"\$PWD\"))/\$(basename \"\$PWD\")\[\e[0;94m\]]\[\e[0m\]\[\e[0;33m\]\${VIRTUAL_ENV:+ (\$(basename \$VIRTUAL_ENV))}\[\e[0m\] \$ "'
+
 # Created by `pipx` on 2025-07-26 15:36:47
 export PATH="$PATH:/home/julian/.local/bin"
 
@@ -34,3 +34,8 @@ eval "$(zoxide init bash)"
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init bash --cmd cd)"
 fi
+
+#zoxide zz
+function zz() {
+    z "$(zoxide query -l | fzf)"
+}

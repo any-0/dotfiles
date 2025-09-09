@@ -14,6 +14,7 @@ keymap({ "n", "v", "o" }, "§", "^", { noremap = true, silent = true, desc = "Ju
 keymap({ "n", "v", "o" }, "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Ctrl+d jumps down and centers the cursor" })
 keymap({ "n", "v", "o" }, "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Ctrl+u jumps down and centers the cursor" })
 keymap({ "n", "v", "o" }, "ß", "\"+", { noremap = true, silent = true, desc = "Select clipboard register" })
+keymap("n", "<C-A-l>", function() vim.cmd([[%s/\r//g]]) end, { noremap = true, silent = true, desc = "Remove carriage returns (^M)" })
 
 --  ┌──────────────────────┐
 --  │   heading function   │
