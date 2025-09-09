@@ -7,7 +7,7 @@ vim.o.termguicolors = true
 vim.g.colors_name = "anytheme"
 
 local p = {
-  bg   = "#0C1009",
+  bg   = "#0D100C",
   fg   = "#aaaaaa",
   red  = "#f7768e",
   greenA = "#9ABD6A",
