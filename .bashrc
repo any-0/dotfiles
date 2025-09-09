@@ -26,6 +26,8 @@ PROMPT_COMMAND='PS1="\[\e[0;94m\]▶ [\[\e[0;97m\]\$(basename \$(dirname \"\$PWD
 export PATH="$PATH:/home/julian/.local/bin"
 
 
+HISTCONTROL=ignoredups
+
 #install zoxide
 eval "$(zoxide init bash)"
 

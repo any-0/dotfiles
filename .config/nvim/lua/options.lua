@@ -17,8 +17,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.tabstop    = 2
   end,
 })
-
-vim.opt.timeout = true
-vim.opt.timeoutlen = 30
-vim.opt.ttimeout = true
-vim.opt.ttimeoutlen = 30
