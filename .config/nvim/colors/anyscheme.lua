@@ -22,7 +22,6 @@ local p = {
   lightGray = "#bbbbbb",
 }
 
-vim.api.nvim_set_hl(0, "Normal", { fg = "#000000" })
 vim.api.nvim_set_hl(0, "Comment",  { fg = p.gray, italic = true })
 vim.api.nvim_set_hl(0, "Constant", { fg = p.yel })
 vim.api.nvim_set_hl(0, "String",   { fg = p.lightGray })
@@ -32,10 +31,9 @@ vim.api.nvim_set_hl(0, "Statement",{ fg = p.greenB })
 vim.api.nvim_set_hl(0, "Type",     { fg = p.yellowish })
 vim.api.nvim_set_hl(0, "PreProc",  { fg = p.yel })
 vim.api.nvim_set_hl(0, "Special",  { fg = p.yellowish })
+vim.api.nvim_set_hl(0, "Visual", { bg = "#444444", fg = "NONE" })
 
-
-
-vim.api.nvim_set_hl(0, "Normal", { fg = p.fg })
+vim.api.nvim_set_hl(0, "Normal", { fg = p.fg, bg = p.bg })
 
 vim.api.nvim_set_hl(0, "@variable",   { fg = p.fg })
 vim.api.nvim_set_hl(0, "@function",   { fg = p.greenA })
