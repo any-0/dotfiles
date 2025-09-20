@@ -22,7 +22,7 @@ local p = {
   lightGray = "#bbbbbb",
 }
 
-vim.api.nvim_set_hl(0, "Normal", { fg = "#000000", bg = "#ffffff" })
+vim.api.nvim_set_hl(0, "Normal", { fg = "#000000" })
 vim.api.nvim_set_hl(0, "Comment",  { fg = p.gray, italic = true })
 vim.api.nvim_set_hl(0, "Constant", { fg = p.yel })
 vim.api.nvim_set_hl(0, "String",   { fg = p.lightGray })
@@ -35,9 +35,9 @@ vim.api.nvim_set_hl(0, "Special",  { fg = p.yellowish })
 
 
 
-vim.api.nvim_set_hl(0, "Normal", { fg = p.fg, bg = p.bg })
+vim.api.nvim_set_hl(0, "Normal", { fg = p.fg })
 
-vim.api.nvim_set_hl(0, "@variable",   { fg = p.fg, bg = p.bg })
+vim.api.nvim_set_hl(0, "@variable",   { fg = p.fg })
 vim.api.nvim_set_hl(0, "@function",   { fg = p.greenA })
 vim.api.nvim_set_hl(0, "@method",     { fg = p.greenB })
 vim.api.nvim_set_hl(0, "@property",   { fg = p.yel })
@@ -47,3 +47,7 @@ vim.api.nvim_set_hl(0, "@keyword",    { fg = p.yellowish })
 vim.api.nvim_set_hl(0, "@string",     { fg = p.lightGray })
 vim.api.nvim_set_hl(0, "@number",     { fg = p.yel })
 vim.api.nvim_set_hl(0, "@comment",    { fg = p.gray, italic = true })
+
+
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#222222" })
+vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#222222" })

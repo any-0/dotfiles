@@ -5,4 +5,5 @@ vim.keymap.set("n", "U", "<C-r>", { noremap = true, silent = true, desc = "Redo"
 vim.keymap.set({ "n", "v", "o" }, "§", "^", { noremap = true, silent = true, desc = "Jump to first non-blank (alias for ^)"})
 vim.keymap.set({ "n", "v", "o" }, "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Ctrl+d jumps down and centers the cursor" })
 vim.keymap.set({ "n", "v", "o" }, "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Ctrl+u jumps down and centers the cursor" })
-vim.keymap.set({ "n", "v", "o" }, "ß", "\"+", { noremap = true, silent = true, desc = "Select clipboard register" })
+vim.keymap.set({ "n", "v", "o" }, "ß", "ZZ", { noremap = true, silent = true, desc = "Write & Quit" })
+vim.keymap.set({ "n", "v", "o" }, "?", "ZQ", { noremap = true, silent = true, desc = "Force quit" })
