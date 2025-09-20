@@ -8,8 +8,16 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
-vim.opt.signcolumn = "yes"
 vim.opt.fillchars:append { eob = " " }
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20"
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
+
+vim.cmd.colorscheme("anyscheme")
+
+-- persistent undo
+vim.opt.undofile   = true
+vim.opt.undolevels = 1000
+vim.opt.undoreload = 1000
+local undo_root = vim.fn.stdpath('state') .. '/undo'
+vim.opt.undodir = undo_root .. '//'
