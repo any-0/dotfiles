@@ -4,7 +4,7 @@ if vim.fn.exists("syntax_on") == 1 then
 end
 
 vim.o.termguicolors = true
-vim.g.colors_name = "anytheme"
+vim.g.colors_name = "anyscheme"
 
 local p = {
   bg = "#0D100C",
