@@ -34,29 +34,26 @@ alias c='cd'
 alias :q='exit'
 alias p='python'
 alias y='wl-copy'
-alias gp='gopass show -c'
 
-    
+export EDITOR=nvim   
+
+unalias gp 2>/dev/null
 
 function gp() {
-    gopass show -c "$@"
+    # Prefer gopass's "only secret" output; fall back to first non-empty line
+    local pw
+    if pw="$(gopass show -o "$@")" 2>/dev/null && [ -n "$pw" ]; then
+        printf '%s' "$pw" | tr -d '\r' | wl-copy
+        return 0
+    fi
+    pw="$(gopass show "$@" | sed '/^$/d' | head -n1 | tr -d '\r')" || return 1
+    [ -n "$pw" ] && printf '%s' "$pw" | wl-copy
 }
 
 function gpu() {
-    local out
+    local out user
     out="$(gopass show "$@")" || return 1
-    printf '%s\n' "$out" | grep '^user:' | cut -d' ' -f2- | wl-copy
+    user="$(printf '%s\n' "$out" | grep -m1 '^user:' | cut -d' ' -f2- | tr -d '\r')"
+    [ -n "$user" ] || user="$(printf '%s\n' "$out" | sed '/^$/d' | head -n1 | tr -d '\r')"  # fallback
+    printf '%s' "$user" | wl-copy
 }
-
-if [ -f /usr/share/bash-completion/completions/gopass ]; then
-    source /usr/share/bash-completion/completions/gopass
-fi
-
-complete -o default -F _gopass_bash_autocomplete gp
-
-__gopass_show_complete() {
-    COMP_WORDS=( gopass show "${COMP_WORDS[@]:1}" )
-    COMP_CWORD=$((COMP_CWORD+1))
-    _gopass_bash_autocomplete
-}
-complete -o default -F __gopass_show_complete gpu

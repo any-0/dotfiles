@@ -17,7 +17,7 @@ require("lazy").setup({
           ensure_installed = {
             "python", "cpp", "lua", "bash", "json",
             "yaml", "javascript", "typescript", "tsx",
-            "html", "css"
+            "html", "css", "latex"
           },
           highlight = { enable = true },
           indent = { enable = true },
