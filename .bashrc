@@ -34,3 +34,29 @@ alias c='cd'
 alias :q='exit'
 alias p='python'
 alias y='wl-copy'
+alias gp='gopass show -c'
+
+    
+
+function gp() {
+    gopass show -c "$@"
+}
+
+function gpu() {
+    local out
+    out="$(gopass show "$@")" || return 1
+    printf '%s\n' "$out" | grep '^user:' | cut -d' ' -f2- | wl-copy
+}
+
+if [ -f /usr/share/bash-completion/completions/gopass ]; then
+    source /usr/share/bash-completion/completions/gopass
+fi
+
+complete -o default -F _gopass_bash_autocomplete gp
+
+__gopass_show_complete() {
+    COMP_WORDS=( gopass show "${COMP_WORDS[@]:1}" )
+    COMP_CWORD=$((COMP_CWORD+1))
+    _gopass_bash_autocomplete
+}
+complete -o default -F __gopass_show_complete gpu

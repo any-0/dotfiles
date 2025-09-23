@@ -9,3 +9,5 @@ vim.keymap.set({ "n", "v", "o" }, "ß", "ZZ", { noremap = true, silent = true, d
 vim.keymap.set({ "n", "v", "o" }, "?", "ZQ", { noremap = true, silent = true, desc = "Force quit" })
 vim.keymap.set({ "n", "v", "o" }, ";", ",", { noremap = true, silent = true, desc = "Swap , and ;" })
 vim.keymap.set({ "n", "v", "o" }, ",", ";", { noremap = true, silent = true, desc = "Swap , and ;" })
+vim.keymap.set({ "n", "v", "o" }, "<C-Left>", "b", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "o" }, "<C-Right>", "w", { noremap = true, silent = true })
