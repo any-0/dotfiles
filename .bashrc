@@ -32,6 +32,7 @@ alias v='nvim'
 alias dc='cd'
 alias c='cd'
 alias :q='exit'
+alias :q!='exit'
 alias p='python'
 alias y='wl-copy'
 
