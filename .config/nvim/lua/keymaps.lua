@@ -10,4 +10,7 @@ vim.keymap.set({ "n", "v", "o" }, "?", "ZQ", { noremap = true, silent = true, de
 vim.keymap.set({ "n", "v", "o" }, ";", ",", { noremap = true, silent = true, desc = "Swap , and ;" })
 vim.keymap.set({ "n", "v", "o" }, ",", ";", { noremap = true, silent = true, desc = "Swap , and ;" })
 vim.keymap.set({ "n", "v", "o" }, "<C-Left>", "b", { noremap = true, silent = true })
-vim.keymap.set({ "n", "v", "o" }, "<C-Right>", "w", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "o" }, "<C-Right>", "e", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "o" }, "<C-Up>", "3k", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "o" }, "<C-Down>", "3j", { noremap = true, silent = true })
+vim.keymap.set("n", "<dead_acute>", "'", { noremap = true })

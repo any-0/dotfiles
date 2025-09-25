@@ -48,7 +48,7 @@
     "format-icons": false,
     "tooltip": false,
     "escape": false,
-    "return-type": "json"
+    "return-type": "json",
     "on-click": "~/.config/waybar/toggle-bt-headphones.sh"
   }
 }
