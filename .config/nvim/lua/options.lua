@@ -23,7 +23,6 @@ vim.opt.undodir = undo_root .. '//'
 -- cursorline and cursorcolumn; both hidden in visual mode
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
-
 vim.api.nvim_create_autocmd("ModeChanged", {
   pattern = "*",
   callback = function()
@@ -32,6 +31,16 @@ vim.api.nvim_create_autocmd("ModeChanged", {
       vim.opt_local.cursorcolumn = false
     else
       vim.opt_local.cursorcolumn = true
+    end
+  end,
+})
+
+-- files are opened at the last visited line
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local last_pos = vim.fn.line([['"]])
+    if last_pos > 0 and last_pos <= vim.fn.line("$") then
+      vim.cmd('normal! g`"')
     end
   end,
 })
