@@ -23,5 +23,18 @@ require("lazy").setup({
           indent = { enable = true },
         })
       end
-    }
+    },
+  {
+    "echasnovski/mini.nvim",
+    version = false,
+    config = function()
+      require("mini.pick").setup()
+      vim.g.mapleader = " "
+      local map = vim.keymap.set
+      map("n", "<leader>f", "<Cmd>Pick files<CR>")
+      map("n", "<leader>g", "<Cmd>Pick grep_live<CR>")
+      map("n", "<leader>r", "<Cmd>Pick buffers<CR>")
+      map("n", "<leader>h", "<Cmd>Pick help<CR>")
+    end,
+  },
 }, { lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json", })
