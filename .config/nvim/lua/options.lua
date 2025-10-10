@@ -10,6 +10,7 @@ vim.opt.fillchars:append { eob = " " }
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20"
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.cmd.colorscheme("anyscheme")

@@ -11,3 +11,7 @@ vim.keymap.set({ "n", "v", "o" }, "<C-Left>", "b", { noremap = true, silent = tr
 vim.keymap.set({ "n", "v", "o" }, "<C-Right>", "e", { noremap = true, silent = true })
 vim.keymap.set({ "n", "v", "o" }, "<C-Up>", "3k", { noremap = true, silent = true })
 vim.keymap.set({ "n", "v", "o" }, "<C-Down>", "3j", { noremap = true, silent = true })
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+vim.keymap.set("x", "p", '"_dP', { desc = "Paste without yanking" })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })

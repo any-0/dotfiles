@@ -34,14 +34,19 @@ alias c='cd'
 alias :q='exit'
 alias :q!='exit'
 alias p='python'
-alias y='wl-copy'
+
+#Use clip in wsl, wl-copy in linux
+if grep -qEi "(microsoft|wsl)" /proc/version &> /dev/null; then
+    alias y='clip.exe'
+elif command -v wl-copy &> /dev/null; then
+    alias y='wl-copy'
+fi
 
 export EDITOR=nvim   
 
 unalias gp 2>/dev/null
 
 function gp() {
-    # Prefer gopass's "only secret" output; fall back to first non-empty line
     local pw
     if pw="$(gopass show -o "$@")" 2>/dev/null && [ -n "$pw" ]; then
         printf '%s' "$pw" | tr -d '\r' | wl-copy
@@ -55,6 +60,9 @@ function gpu() {
     local out user
     out="$(gopass show "$@")" || return 1
     user="$(printf '%s\n' "$out" | grep -m1 '^user:' | cut -d' ' -f2- | tr -d '\r')"
-    [ -n "$user" ] || user="$(printf '%s\n' "$out" | sed '/^$/d' | head -n1 | tr -d '\r')"  # fallback
+    [ -n "$user" ] || user="$(printf '%s\n' "$out" | sed '/^$/d' | head -n1 | tr -d '\r')"
     printf '%s' "$user" | wl-copy
 }
+
+# opencode
+export PATH=/home/julian/.opencode/bin:$PATH
