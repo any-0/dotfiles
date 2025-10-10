@@ -18,6 +18,7 @@ if is_wsl then
   vim.cmd.colorscheme("work")
 else
   vim.cmd.colorscheme("anyscheme")
+end
 
 -- persistent undo
 vim.opt.undofile   = true
