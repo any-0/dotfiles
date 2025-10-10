@@ -27,24 +27,18 @@
     margin: 0; 
 }    
 #workspaces button {
-  margin: 0 2px;
-  padding: 0 8px;
+  padding: 0 40px;
   color: #888;
   background: transparent;
-  transition: background 0.2s ease;
 }
 #workspaces button.active,
 #workspaces button.focused {
   color: #fff;
-  background: #444;
+  background: #1e1e24;
 }
-
-#workspaces button,
 #workspaces button:hover,
 #workspaces button:focus,
 #workspaces button:active,
-#workspaces button.active,
-#workspaces button.focused,
 #workspaces button.urgent,
 #workspaces button.visible {
   border-radius: 0;

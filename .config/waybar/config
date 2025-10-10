@@ -3,10 +3,11 @@
   "position":"top",
   "height":  20,
   "spacing": 4,
+// "cpu", "memory",
+  "modules-left":["hyprland/window"],
+  "modules-center":  ["hyprland/workspaces"],
+  "modules-right": ["custom/date", "pulseaudio", "custom/bt-battery"],
 
-  "modules-left":  ["hyprland/workspaces", "hyprland/window"],
-  "modules-center":["custom/date"],
-  "modules-right": ["cpu", "memory", "pulseaudio", "custom/bt-battery"],
 
   "custom/date": {
     "exec": "date '+%a %d %b  %H:%M'",
@@ -16,8 +17,8 @@
   "hyprland/workspaces": {
     "format": "{name}",
     "sort-by": "number",
-    "on-click": "activate",
-    "tooltip": false
+    "tooltip": false,
+    "show-special": true
   },
 
   "hyprland/window": {
