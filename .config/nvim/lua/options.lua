@@ -13,7 +13,11 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.cmd.colorscheme("anyscheme")
+local is_wsl = vim.fn.has("wsl") == 1
+if is_wsl then
+  vim.cmd.colorscheme("work")
+else
+  vim.cmd.colorscheme("anyscheme")
 
 -- persistent undo
 vim.opt.undofile   = true
